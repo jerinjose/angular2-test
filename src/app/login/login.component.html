@@ -1,18 +1,18 @@
-<div class="container">
-    <span><h1 id="app-name">Dream</h1></span>
-    <form #form="ngForm" novalidate>
-      <div class="form-group text-div">
-        <label>Email</label>
-        <input type="email" class="form-control text-input"  placeholder="Enter Email" [(ngModel)]="user.email" #emailfield="ngModel" name="emailfield"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" required>
-        <small *ngIf = "(!emailfield.valid && submitted)" class="text-danger">Please enter valid email address.</small>
-      </div>
-      <div class="form-group text-div">
-        <label>Password</label>
-        <input type="password" class="form-control text-input"   placeholder="Enter Password" [(ngModel)]="user.password" #passwordfield="ngModel" name="passwordfield" required>
-        <small *ngIf = "(!passwordfield.valid && submitted)" class="text-danger">Please enter valid password.</small>
-      </div>
-      <div class="col-md-4 text-center">
-        <button type="button" class="btn btn-primary login-btn" (click)="userLogin(form.value, form.valid)">Login</button>
-      </div>
-    </form>
-</div>
+<div class="main">
+ <div class="login-form">
+   <h1>User Login</h1>
+       <div class="head">
+         <img src="assets/images/user.png" alt=""/>
+       </div>
+     <form #form="ngForm" novalidate>
+         <small *ngIf = "(!emailfield.valid && submitted)" class="text-danger">Please enter valid email address.</small>
+         <input type="text" class="text"  placeholder="Email" [(ngModel)]="user.email" #emailfield="ngModel" name="emailfield"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" required>
+         <small *ngIf = "(!passwordfield.valid && submitted)" class="text-danger">Please enter valid password.</small>
+         <input type="password" class=""   placeholder="Password" [(ngModel)]="user.password" #passwordfield="ngModel" name="passwordfield" required>
+         <div class="submit">
+           <button type="button" class="btn btn-primary login-btn" (click)="userLogin(form.value, form.valid)">Login</button>
+       </div>
+       <p><a href="">Forgot Password ?</a></p>
+     </form>
+   </div>
+ </div>
